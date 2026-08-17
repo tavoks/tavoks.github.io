@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Demo: Chat em tempo real com SignalR</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/style.css">
+<style>
+  .demo-wrap { max-width: 640px; margin: 0 auto; padding: 60px 24px; }
+  .demo-back { display: inline-block; margin-bottom: 24px; color: var(--text-muted); font-size: 0.9rem; }
+  .demo-back:hover { color: var(--accent); }
+  .demo-note {
+    background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius);
+    padding: 16px 20px; margin-bottom: 24px; font-size: 0.88rem; color: var(--text-muted);
+  }
+  .demo-note strong { color: var(--accent); }
+  #status { font-family: var(--font-mono); font-size: 0.85rem; margin-bottom: 16px; }
+  .status-connecting { color: #ffb75e; }
+  .status-connected { color: var(--accent); }
+  .status-error { color: var(--danger); }
+  #chatBox {
+    background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius);
+    height: 320px; overflow-y: auto; padding: 16px; margin-bottom: 16px; display: flex; flex-direction: column; gap: 8px;
+  }
+  .msg { font-size: 0.92rem; padding: 8px 12px; border-radius: 10px; background: var(--bg-alt); max-width: 85%; }
+  .msg .who { font-family: var(--font-mono); font-size: 0.72rem; color: var(--accent); display: block; margin-bottom: 2px; }
+  .msg.system { color: var(--text-muted); font-style: italic; background: transparent; font-size: 0.82rem; }
+  .chat-input-row { display: flex; gap: 10px; }
+  .chat-input-row input {
+    flex: 1; background: var(--surface); border: 1px solid var(--border); border-radius: 10px;
+    padding: 12px 14px; color: var(--text); font-family: var(--font-body); font-size: 0.95rem;
+  }
+  .chat-input-row input:focus { outline: none; border-color: var(--accent); }
+</style>
+</head>
+<body>
+<div class="bg-grid"></div>
+<div class="demo-wrap">
+  <a class="demo-back" href="../index.html#projetos">← Voltar ao portfólio</a>
+  <p class="section-tag">Demo ao vivo</p>
+  <h2 class="section-title">Chat em tempo real — SignalRExample</h2>
+  <div class="demo-note">
+    Esse chat está conectado a um backend <strong>ASP.NET Core + SignalR real</strong>, rodando ao vivo.
+    Como é hospedado no plano gratuito, o servidor pode "dormir" após um tempo sem uso —
+    a primeira conexão pode levar até 30-50s para acordar. Abra em duas abas para conversar com você mesmo.
+  </div>
+  <p id="status" class="status-connecting">Conectando ao servidor...</p>
+  <div id="chatBox"></div>
+  <div class="chat-input-row">
+    <input id="nameInput" type="text" placeholder="Seu nome" style="max-width:140px;">
+    <input id="messageInput" type="text" placeholder="Digite uma mensagem..." disabled>
+    <button id="sendBtn" class="btn btn-primary btn-small" disabled>Enviar</button>
+  </div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/microsoft-signalr/8.0.0/signalr.min.js"></script>
+<script>
+  const HUB_URL = "https://signalr-chat-demo.onrender.com/chatHub";
+  const statusEl = document.getElementById('status');
+  const chatBox = document.getElementById('chatBox');
+  const nameInput = document.getElementById('nameInput');
+  const messageInput = document.getElementById('messageInput');
+  const sendBtn = document.getElementById('sendBtn');
+
+  function addMessage(who, text, system) {
+    const div = document.createElement('div');
+    div.className = system ? 'msg system' : 'msg';
+    if (!system) {
+      const span = document.createElement('span');
+      span.className = 'who';
+      span.textContent = who;
+      div.appendChild(span);
+      div.appendChild(document.createTextNode(text));
+    } else {
+      div.textContent = text;
+    }
+    chatBox.appendChild(div);
+    chatBox.scrollTop = chatBox.scrollHeight;
+  }
+
+  const connection = new signalR.HubConnectionBuilder()
+    .withUrl(HUB_URL)
+    .withAutomaticReconnect()
+    .build();
+
+  connection.on("ReceiveMessage", (user, message) => addMessage(user, message, false));
+  connection.on("UserConnected", () => addMessage(null, "Alguém entrou no chat.", true));
+  connection.on("UserDisconnected", () => addMessage(null, "Alguém saiu do chat.", true));
+
+  connection.start()
+    .then(() => {
+      statusEl.textContent = "Conectado ✓";
+      statusEl.className = "status-connected";
+      messageInput.disabled = false;
+      sendBtn.disabled = false;
+      messageInput.focus();
+    })
+    .catch(() => {
+      statusEl.textContent = "O servidor está acordando (plano gratuito) — tentando de novo em alguns segundos...";
+      statusEl.className = "status-error";
+      setTimeout(() => location.reload(), 8000);
+    });
+
+  function sendMessage() {
+    if (!messageInput.value.trim()) return;
+    const name = nameInput.value.trim() || 'Visitante';
+    connection.invoke("SendMessage", name, messageInput.value.trim());
+    messageInput.value = '';
+    messageInput.focus();
+  }
+
+  messageInput.addEventListener('keydown', (e) => {
+    if (e.key === 'Enter') sendMessage();
+  });
+  sendBtn.addEventListener('click', sendMessage);
+</script>
+</body>
+</html>
