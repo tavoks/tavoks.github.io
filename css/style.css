@@ -105,6 +105,10 @@ a { color: inherit; text-decoration: none; }
   padding: 100px 24px 80px;
 }
 .hero-inner { max-width: 720px; }
+.hero-photo {
+  width: 96px; height: 96px; border-radius: 50%; object-fit: cover;
+  border: 2px solid var(--border); margin-bottom: 24px; display: block;
+}
 .eyebrow {
   font-family: var(--font-mono);
   color: var(--accent);
@@ -168,6 +172,21 @@ a { color: inherit; text-decoration: none; }
   margin-bottom: 16px;
   font-size: 1.02rem;
 }
+
+/* Timeline */
+.timeline { margin-top: 40px; display: flex; flex-direction: column; gap: 28px; }
+.timeline-item {
+  background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius);
+  padding: 28px;
+}
+.timeline-head { display: flex; align-items: baseline; justify-content: space-between; gap: 12px; flex-wrap: wrap; margin-bottom: 4px; }
+.timeline-head h3 { font-size: 1.15rem; }
+.timeline-client { font-size: 0.85rem; color: var(--text-muted); font-weight: 400; }
+.timeline-period { font-family: var(--font-mono); font-size: 0.8rem; color: var(--accent); white-space: nowrap; }
+.timeline-role { color: var(--text-muted); font-size: 0.9rem; margin-bottom: 14px; }
+.timeline-list { margin: 12px 0 18px; padding-left: 20px; display: flex; flex-direction: column; gap: 10px; }
+.timeline-list li { color: var(--text-muted); font-size: 0.92rem; line-height: 1.6; }
+.timeline-list strong { color: var(--text); }
 
 /* Services */
 .services-grid {

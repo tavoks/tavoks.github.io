@@ -20,6 +20,7 @@
     <a href="#home" class="logo">gustavo<span class="accent">.dev</span></a>
     <nav class="nav-links">
       <a href="#sobre">Sobre</a>
+      <a href="#experiencia">Experiência</a>
       <a href="#servicos">Serviços</a>
       <a href="#skills">Skills</a>
       <a href="#projetos">Projetos</a>
@@ -33,12 +34,13 @@
 
   <section id="home" class="hero">
     <div class="hero-inner">
+      <img src="assets/profile.jpg" alt="Gustavo de Lima" class="hero-photo">
       <p class="eyebrow">// disponível para novos projetos</p>
       <h1>Gustavo de Lima</h1>
       <h2 class="hero-role">Desenvolvedor <span class="accent">Full Stack</span> — Especialista em Backend .NET, APIs &amp; Microsserviços</h2>
       <p class="hero-desc">
-        Construo APIs REST robustas, workers assíncronos e arquiteturas de microsserviços
-        que se comunicam via Kafka e RabbitMQ. Também assumo telas em Angular/React e ajudo
+        Mais de 7 anos construindo APIs REST, workers assíncronos e arquiteturas de microsserviços
+        em empresas como Havan e Itaú Unibanco. Também assumo telas em Angular/React e ajudo
         times pontualmente: corrigir bugs, subir um projeto na AWS/Azure ou destravar um
         deploy que travou.
       </p>
@@ -68,11 +70,12 @@
       <p class="section-tag">01 · Sobre</p>
       <h2 class="section-title">Backend é onde eu penso melhor.</h2>
       <p class="section-text">
-        Sou desenvolvedor especializado no ecossistema .NET, com foco em construir sistemas
-        que não param: APIs REST bem desenhadas, workers que processam filas de forma
-        idempotente e microsserviços que se comunicam de forma confiável via Kafka e RabbitMQ.
-        Gosto de arquitetura limpa, testes automatizados e observabilidade — projetos que
-        aguentam produção, não só o "funciona na minha máquina".
+        Desenvolvedor backend com mais de 7 anos de experiência em varejo (Havan), setor bancário
+        (Itaú Unibanco) e consultoria (Cognizant). Especialista em C# e .NET — do .NET Framework ao
+        .NET 10 — com atuação em APIs REST, workers, microsserviços e integrações de alto volume via
+        RabbitMQ e Kafka. Experiência sólida em Clean Architecture, DDD, CQRS e SOLID, bancos
+        relacionais e NoSQL, além de práticas de resiliência (retry, outbox, reprocessamento),
+        observabilidade e CI/CD em ambientes de produção com times ágeis.
       </p>
       <p class="section-text">
         Atendo como desenvolvedor autônomo para empresas e squads que precisam de uma API nova,
@@ -82,9 +85,67 @@
     </div>
   </section>
 
-  <section id="servicos" class="section section-alt">
+  <section id="experiencia" class="section section-alt">
     <div class="section-inner">
-      <p class="section-tag">02 · Serviços</p>
+      <p class="section-tag">02 · Experiência</p>
+      <h2 class="section-title">Onde já coloquei a mão</h2>
+
+      <div class="timeline">
+        <div class="timeline-item">
+          <div class="timeline-head">
+            <h3>Havan S.A.</h3>
+            <span class="timeline-period">abr 2021 — jul 2026</span>
+          </div>
+          <p class="timeline-role">Analista Desenvolvedor de Software</p>
+          <p class="section-text">
+            Atuação nas equipes de <strong>CRM</strong> e <strong>Logística</strong>, no desenvolvimento,
+            análise e manutenção de APIs REST, workers e microsserviços críticos para a operação da companhia.
+          </p>
+          <ul class="timeline-list">
+            <li><strong>CRM:</strong> manutenção e evolução dos serviços de envio de WhatsApp, e-mail, SMS e push notification,
+            com integrações ao Salesforce Marketing Cloud e importações via Pentaho. Desenvolvi um microsserviço de envio
+            de WhatsApp (fila RabbitMQ, persistência com GUID de rastreio, worker com retry e endpoint de consulta de status)
+            e workers em .NET 10 para reprocessamento resiliente de encurtamento de URLs e notificação de faturas em atraso.</li>
+            <li><strong>Logística:</strong> backend do aplicativo de motoristas (saída, chegada, lacração e abastecimento de
+            cargas), refatoração de projetos Genexus para .NET Core (validação de lacres, expedição de cargas, armazenamento
+            inteligente) e comunicação entre microsserviços via RabbitMQ e integrações SOAP.</li>
+          </ul>
+          <div class="chips">
+            <span class="chip">.NET 8-10</span><span class="chip">RabbitMQ</span><span class="chip">SQL Server</span>
+            <span class="chip">PostgreSQL</span><span class="chip">Kubernetes (Rancher)</span><span class="chip">Datadog</span>
+            <span class="chip">Jenkins</span><span class="chip">SonarQube</span><span class="chip">C4/ADR</span>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-head">
+            <h3>Cognizant <span class="timeline-client">(alocado no Itaú Unibanco)</span></h3>
+            <span class="timeline-period">dez 2018 — abr 2021</span>
+          </div>
+          <p class="timeline-role">Analista Desenvolvedor de Software</p>
+          <p class="section-text">
+            Atuação terceirizada no Itaú Unibanco, nas equipes dos setores <strong>Imobiliário</strong> e
+            <strong>Consórcio</strong>, desenvolvendo e mantendo sistemas internos de apoio ao atendimento.
+          </p>
+          <ul class="timeline-list">
+            <li><strong>Imobiliário:</strong> responsável pelo serviço de retenção de clientes e participação na
+            refatoração do projeto Agiliza — consolidação de informações de clientes de diferentes áreas do banco
+            via web scraping e APIs REST, usado diariamente pelos funcionários no atendimento.</li>
+            <li><strong>Consórcio:</strong> desenvolvimento e manutenção de APIs REST, aplicações MVC e console
+            applications de automação de rotinas de negócio, incluindo automação de OCR para leitura de documentos.</li>
+          </ul>
+          <div class="chips">
+            <span class="chip">.NET Framework 2/3</span><span class="chip">ASP.NET MVC</span><span class="chip">SQL Server</span>
+            <span class="chip">Web Scraping</span><span class="chip">OCR</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="servicos" class="section">
+    <div class="section-inner">
+      <p class="section-tag">03 · Serviços</p>
       <h2 class="section-title">Como posso ajudar</h2>
       <p class="section-text">Do projeto novo do zero ao apoio pontual em algo que já está em produção.</p>
 
@@ -123,9 +184,9 @@
     </div>
   </section>
 
-  <section id="skills" class="section">
+  <section id="skills" class="section section-alt">
     <div class="section-inner">
-      <p class="section-tag">03 · Stack</p>
+      <p class="section-tag">04 · Stack</p>
       <h2 class="section-title">Ferramentas do dia a dia</h2>
       <div class="skills-grid">
         <div class="skill-card">
@@ -173,9 +234,9 @@
     </div>
   </section>
 
-  <section id="projetos" class="section section-alt">
+  <section id="projetos" class="section">
     <div class="section-inner">
-      <p class="section-tag">04 · Projetos</p>
+      <p class="section-tag">05 · Projetos</p>
       <h2 class="section-title">Alguns sistemas que construí</h2>
       <p class="section-text">Projetos de estudo e portfólio com código público no GitHub — arquitetura pensada para produção, não só protótipo.</p>
 
@@ -276,9 +337,9 @@
     </div>
   </section>
 
-  <section id="contato" class="section">
+  <section id="contato" class="section section-alt">
     <div class="section-inner contact-inner">
-      <p class="section-tag">05 · Contato</p>
+      <p class="section-tag">06 · Contato</p>
       <h2 class="section-title">Bora conversar sobre o seu projeto?</h2>
       <p class="section-text">
         Me chame direto no WhatsApp ou mande um e-mail contando o que você precisa —
