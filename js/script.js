@@ -33,6 +33,29 @@ if (lightbox) {
   });
 }
 
+const toast = document.getElementById('toast');
+let toastTimer;
+function showToast(message) {
+  if (!toast) return;
+  toast.textContent = message;
+  toast.classList.add('is-visible');
+  clearTimeout(toastTimer);
+  toastTimer = setTimeout(() => toast.classList.remove('is-visible'), 2500);
+}
+
+document.querySelectorAll('a[href^="mailto:"]').forEach((link) => {
+  link.addEventListener('click', () => {
+    const email = link.href.replace('mailto:', '').split('?')[0];
+    if (navigator.clipboard) {
+      navigator.clipboard.writeText(email)
+        .then(() => showToast('E-mail copiado: ' + email))
+        .catch(() => showToast(email));
+    } else {
+      showToast(email);
+    }
+  });
+});
+
 const form = document.getElementById('contactForm');
 const status = document.getElementById('formStatus');
 
