@@ -7,7 +7,7 @@ document.querySelectorAll('.project-gif').forEach((img) => {
   img.classList.add('is-expandable');
   img.setAttribute('role', 'button');
   img.setAttribute('tabindex', '0');
-  img.setAttribute('aria-label', 'Ampliar imagem');
+  img.setAttribute('aria-label', translations['a11y.enlargeImage'][getLang()]);
   const open = () => {
     lightboxImg.src = img.src;
     lightboxImg.alt = img.alt;
@@ -48,7 +48,7 @@ document.querySelectorAll('a[href^="mailto:"]').forEach((link) => {
     const email = link.href.replace('mailto:', '').split('?')[0];
     if (navigator.clipboard) {
       navigator.clipboard.writeText(email)
-        .then(() => showToast('E-mail copiado: ' + email))
+        .then(() => showToast(translations['toast.emailCopied'][getLang()] + email))
         .catch(() => showToast(email));
     } else {
       showToast(email);
@@ -63,12 +63,7 @@ if (form) {
   form.addEventListener('submit', async (e) => {
     e.preventDefault();
 
-    if (form.action.includes('YOUR_FORM_ID')) {
-      status.textContent = 'Formulário ainda não configurado — por enquanto, use o WhatsApp ou e-mail acima. :)';
-      return;
-    }
-
-    status.textContent = 'Enviando...';
+    status.textContent = translations['form.sending'][getLang()];
     try {
       const res = await fetch(form.action, {
         method: 'POST',
@@ -76,13 +71,13 @@ if (form) {
         headers: { Accept: 'application/json' },
       });
       if (res.ok) {
-        status.textContent = 'Mensagem enviada! Retorno em breve.';
+        status.textContent = translations['form.sent'][getLang()];
         form.reset();
       } else {
-        status.textContent = 'Algo deu errado. Tente pelo WhatsApp ou e-mail.';
+        status.textContent = translations['form.error'][getLang()];
       }
     } catch {
-      status.textContent = 'Algo deu errado. Tente pelo WhatsApp ou e-mail.';
+      status.textContent = translations['form.error'][getLang()];
     }
   });
 }

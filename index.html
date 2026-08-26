@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Gustavo de Lima — Desenvolvedor Backend .NET</title>
-<meta name="description" content="Gustavo de Lima — Desenvolvedor backend freelancer especializado em APIs REST, microsserviços orientados a eventos e workers em .NET, Kafka e RabbitMQ.">
+<title id="pageTitle">Gustavo de Lima — .NET Backend Developer</title>
+<meta id="pageDescription" name="description" content="Gustavo de Lima — Freelance backend developer specializing in REST APIs, event-driven microservices, and workers in .NET, Kafka, and RabbitMQ.">
 <link rel="icon" href="data:,">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -19,14 +19,18 @@
   <div class="nav-inner">
     <a href="#home" class="logo">gustavo<span class="accent">.dev</span></a>
     <nav class="nav-links">
-      <a href="#sobre">Sobre</a>
-      <a href="#experiencia">Experiência</a>
-      <a href="#servicos">Serviços</a>
-      <a href="#skills">Skills</a>
-      <a href="#projetos">Projetos</a>
-      <a href="#contato">Contato</a>
+      <a href="#sobre" data-i18n="nav.about">About</a>
+      <a href="#experiencia" data-i18n="nav.experience">Experience</a>
+      <a href="#servicos" data-i18n="nav.services">Services</a>
+      <a href="#skills" data-i18n="nav.skills">Skills</a>
+      <a href="#projetos" data-i18n="nav.projects">Projects</a>
+      <a href="#contato" data-i18n="nav.contact">Contact</a>
     </nav>
-    <a class="btn btn-small btn-primary" href="https://wa.me/5511945741566?text=Ol%C3%A1%20Gustavo%2C%20vim%20pelo%20seu%20portf%C3%B3lio%20e%20gostaria%20de%20conversar%20sobre%20um%20projeto." target="_blank" rel="noopener">Fale comigo</a>
+    <div class="lang-switch" role="group" aria-label="Language">
+      <button type="button" class="lang-btn" data-lang="en">EN</button>
+      <button type="button" class="lang-btn" data-lang="pt">PT</button>
+    </div>
+    <a class="btn btn-small btn-primary" data-i18n-href="whatsapp" href="#" target="_blank" rel="noopener" data-i18n="nav.cta">Get in touch</a>
   </div>
 </header>
 
@@ -35,21 +39,20 @@
   <section id="home" class="hero">
     <div class="hero-inner">
       <img src="assets/profile.jpg" alt="Gustavo de Lima" class="hero-photo">
-      <p class="eyebrow">// disponível para novos projetos</p>
+      <p class="eyebrow" data-i18n="hero.eyebrow">// available for new projects</p>
       <h1>Gustavo de Lima</h1>
-      <h2 class="hero-role">Desenvolvedor <span class="accent">Full Stack</span> — Especialista em Backend .NET, APIs &amp; Microsserviços</h2>
-      <p class="hero-desc">
-        Mais de 7 anos construindo APIs REST, workers assíncronos e arquiteturas de microsserviços
-        em empresas como Havan e Itaú Unibanco. Também assumo telas em Angular/React e ajudo
-        times pontualmente: corrigir bugs, subir um projeto na AWS/Azure ou destravar um
-        deploy que travou.
+      <h2 class="hero-role" data-i18n="hero.role">Full Stack <span class="accent">Developer</span> — .NET Backend Specialist, APIs &amp; Microservices</h2>
+      <p class="hero-desc" data-i18n="hero.desc">
+        7+ years building REST APIs, async workers, and microservices architectures
+        at companies like Havan and Itaú Unibanco. I also handle Angular/React front-ends and help
+        teams on demand: fixing bugs, deploying to AWS/Azure, or unblocking a stuck deploy.
       </p>
       <div class="hero-cta">
-        <a class="btn btn-primary" href="https://wa.me/5511945741566?text=Ol%C3%A1%20Gustavo%2C%20vim%20pelo%20seu%20portf%C3%B3lio%20e%20gostaria%20de%20conversar%20sobre%20um%20projeto." target="_blank" rel="noopener">
+        <a class="btn btn-primary" data-i18n-href="whatsapp" href="#" target="_blank" rel="noopener">
           <svg class="ico" viewBox="0 0 24 24" fill="currentColor" width="18" height="18"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.79.47 3.54 1.36 5.08L2 22l5.19-1.44a9.9 9.9 0 0 0 4.85 1.24h.01c5.46 0 9.9-4.45 9.9-9.9 0-2.65-1.03-5.13-2.9-7-1.88-1.87-4.36-2.9-7.01-2.9Zm0 18.13h-.01a8.2 8.2 0 0 1-4.19-1.15l-.3-.18-3.08.86.82-3.01-.2-.31a8.19 8.19 0 0 1-1.26-4.43c0-4.53 3.69-8.22 8.23-8.22 2.2 0 4.26.86 5.82 2.42a8.16 8.16 0 0 1 2.41 5.81c0 4.53-3.69 8.21-8.24 8.21Zm4.51-6.16c-.25-.12-1.46-.72-1.69-.8-.23-.08-.39-.12-.56.13-.16.24-.64.8-.78.96-.14.16-.29.18-.53.06-.25-.12-1.05-.39-2-1.23-.74-.66-1.24-1.48-1.39-1.72-.14-.25-.02-.38.11-.5.11-.11.25-.29.37-.43.12-.15.16-.25.25-.41.08-.16.04-.31-.02-.43-.06-.12-.56-1.35-.77-1.85-.2-.48-.41-.42-.56-.43-.14-.01-.31-.01-.48-.01-.16 0-.43.06-.66.31-.23.24-.86.85-.86 2.06 0 1.22.89 2.4 1.01 2.56.12.16 1.75 2.68 4.25 3.75.59.26 1.06.41 1.42.53.6.19 1.14.16 1.57.1.48-.07 1.46-.6 1.67-1.17.2-.58.2-1.08.14-1.18-.06-.1-.22-.16-.47-.28Z"/></svg>
           WhatsApp
         </a>
-        <a class="btn btn-ghost" href="#projetos">Ver projetos</a>
+        <a class="btn btn-ghost" href="#projetos" data-i18n="hero.viewProjects">View projects</a>
       </div>
       <div class="hero-links">
         <a href="https://github.com/tavoks" target="_blank" rel="noopener" aria-label="GitHub">
@@ -67,48 +70,48 @@
 
   <section id="sobre" class="section">
     <div class="section-inner">
-      <p class="section-tag">01 · Sobre</p>
-      <h2 class="section-title">Backend é onde eu penso melhor.</h2>
-      <p class="section-text">
-        Desenvolvedor backend com mais de 7 anos de experiência em varejo (Havan), setor bancário
-        (Itaú Unibanco) e consultoria (Cognizant). Especialista em C# e .NET — do .NET Framework ao
-        .NET 10 — com atuação em APIs REST, workers, microsserviços e integrações de alto volume via
-        RabbitMQ e Kafka. Experiência sólida em Clean Architecture, DDD, CQRS e SOLID, bancos
-        relacionais e NoSQL, além de práticas de resiliência (retry, outbox, reprocessamento),
-        observabilidade e CI/CD em ambientes de produção com times ágeis.
+      <p class="section-tag" data-i18n="about.tag">01 · About</p>
+      <h2 class="section-title" data-i18n="about.title">Backend is where I think best.</h2>
+      <p class="section-text" data-i18n="about.p1">
+        Backend developer with 7+ years of experience in retail (Havan), banking
+        (Itaú Unibanco), and consulting (Cognizant). Specialist in C# and .NET — from .NET Framework
+        to .NET 10 — working with REST APIs, workers, microservices, and high-volume integrations via
+        RabbitMQ and Kafka. Solid experience with Clean Architecture, DDD, CQRS, and SOLID, relational
+        and NoSQL databases, plus resilience practices (retry, outbox, reprocessing),
+        observability, and CI/CD in production environments with agile teams.
       </p>
-      <p class="section-text">
-        Atendo como desenvolvedor autônomo para empresas e squads que precisam de uma API nova,
-        um serviço de processamento assíncrono, ou ajuda para desenhar/migrar uma arquitetura
-        de monolito para microsserviços.
+      <p class="section-text" data-i18n="about.p2">
+        I work as an independent developer for companies and squads that need a new API,
+        an asynchronous processing service, or help designing/migrating a monolith
+        architecture to microservices.
       </p>
     </div>
   </section>
 
   <section id="experiencia" class="section section-alt">
     <div class="section-inner">
-      <p class="section-tag">02 · Experiência</p>
-      <h2 class="section-title">Trajetória construída em produção</h2>
+      <p class="section-tag" data-i18n="exp.tag">02 · Experience</p>
+      <h2 class="section-title" data-i18n="exp.title">A track record built in production</h2>
 
       <div class="timeline">
         <div class="timeline-item">
           <div class="timeline-head">
             <h3>Havan S.A.</h3>
-            <span class="timeline-period">abr 2021 — jul 2026</span>
+            <span class="timeline-period" data-i18n="exp.havan.period">Apr 2021 — Jul 2026</span>
           </div>
-          <p class="timeline-role">Analista Desenvolvedor de Software</p>
-          <p class="section-text">
-            Atuação nas equipes de <strong>CRM</strong> e <strong>Logística</strong>, no desenvolvimento,
-            análise e manutenção de APIs REST, workers e microsserviços críticos para a operação da companhia.
+          <p class="timeline-role" data-i18n="exp.role">Software Developer Analyst</p>
+          <p class="section-text" data-i18n="exp.havan.intro">
+            Worked across the <strong>CRM</strong> and <strong>Logistics</strong> teams, developing,
+            analyzing, and maintaining REST APIs, workers, and microservices critical to the company's operations.
           </p>
           <ul class="timeline-list">
-            <li><strong>CRM:</strong> manutenção e evolução dos serviços de envio de WhatsApp, e-mail, SMS e push notification,
-            com integrações ao Salesforce Marketing Cloud e importações via Pentaho. Desenvolvi um microsserviço de envio
-            de WhatsApp (fila RabbitMQ, persistência com GUID de rastreio, worker com retry e endpoint de consulta de status)
-            e workers em .NET 10 para reprocessamento resiliente de encurtamento de URLs e notificação de faturas em atraso.</li>
-            <li><strong>Logística:</strong> backend do aplicativo de motoristas (saída, chegada, lacração e abastecimento de
-            cargas), refatoração de projetos Genexus para .NET Core (validação de lacres, expedição de cargas, armazenamento
-            inteligente) e comunicação entre microsserviços via RabbitMQ e integrações SOAP.</li>
+            <li data-i18n="exp.havan.crm"><strong>CRM:</strong> maintained and evolved WhatsApp, email, SMS, and push notification services,
+            with integrations to Salesforce Marketing Cloud and imports via Pentaho. Built a WhatsApp messaging
+            microservice (RabbitMQ queue, persistence with a tracking GUID, retry-enabled worker, and a status-lookup endpoint)
+            and .NET 10 workers for resilient reprocessing of URL shortening and overdue invoice notifications.</li>
+            <li data-i18n="exp.havan.log"><strong>Logistics:</strong> backend for the driver app (departure, arrival, seal registration, and cargo
+            loading), refactored Genexus projects into .NET Core (seal validation, cargo dispatch, smart warehousing),
+            and inter-service communication via RabbitMQ and SOAP integrations.</li>
           </ul>
           <div class="chips">
             <span class="chip">.NET 8-10</span><span class="chip">RabbitMQ</span><span class="chip">SQL Server</span>
@@ -119,20 +122,20 @@
 
         <div class="timeline-item">
           <div class="timeline-head">
-            <h3>Cognizant <span class="timeline-client">(alocado no Itaú Unibanco)</span></h3>
-            <span class="timeline-period">dez 2018 — abr 2021</span>
+            <h3>Cognizant <span class="timeline-client" data-i18n="exp.cognizant.client">(assigned to Itaú Unibanco)</span></h3>
+            <span class="timeline-period" data-i18n="exp.cognizant.period">Dec 2018 — Apr 2021</span>
           </div>
-          <p class="timeline-role">Analista Desenvolvedor de Software</p>
-          <p class="section-text">
-            Atuação terceirizada no Itaú Unibanco, nas equipes dos setores <strong>Imobiliário</strong> e
-            <strong>Consórcio</strong>, desenvolvendo e mantendo sistemas internos de apoio ao atendimento.
+          <p class="timeline-role" data-i18n="exp.role">Software Developer Analyst</p>
+          <p class="section-text" data-i18n="exp.cognizant.intro">
+            Contracted work at Itaú Unibanco, on the <strong>Real Estate</strong> and
+            <strong>Consortium</strong> teams, developing and maintaining internal systems supporting customer service.
           </p>
           <ul class="timeline-list">
-            <li><strong>Imobiliário:</strong> responsável pelo serviço de retenção de clientes e participação na
-            refatoração do projeto Agiliza — consolidação de informações de clientes de diferentes áreas do banco
-            via web scraping e APIs REST, usado diariamente pelos funcionários no atendimento.</li>
-            <li><strong>Consórcio:</strong> desenvolvimento e manutenção de APIs REST, aplicações MVC e console
-            applications de automação de rotinas de negócio, incluindo automação de OCR para leitura de documentos.</li>
+            <li data-i18n="exp.cognizant.imob"><strong>Real Estate:</strong> owned the customer retention service and contributed to
+            refactoring the Agiliza project — consolidating customer data from different areas of the bank
+            via web scraping and REST APIs, used daily by service staff.</li>
+            <li data-i18n="exp.cognizant.consorcio"><strong>Consortium:</strong> developed and maintained REST APIs, MVC applications, and console
+            apps automating business routines, including OCR automation for document reading.</li>
           </ul>
           <div class="chips">
             <span class="chip">.NET Framework 2/3</span><span class="chip">ASP.NET MVC</span><span class="chip">SQL Server</span>
@@ -145,40 +148,40 @@
 
   <section id="servicos" class="section">
     <div class="section-inner">
-      <p class="section-tag">03 · Serviços</p>
-      <h2 class="section-title">Como posso ajudar</h2>
-      <p class="section-text">Do projeto novo do zero ao apoio pontual em algo que já está em produção.</p>
+      <p class="section-tag" data-i18n="services.tag">03 · Services</p>
+      <h2 class="section-title" data-i18n="services.title">How I can help</h2>
+      <p class="section-text" data-i18n="services.subtitle">From a brand-new project to one-off support on something already in production.</p>
 
       <div class="services-grid">
         <div class="service-card">
           <span class="service-icon">◆</span>
-          <h3>APIs &amp; Backend .NET</h3>
-          <p>Design e desenvolvimento de APIs REST do zero, com autenticação, validação e documentação (Swagger).</p>
+          <h3>APIs &amp; .NET Backend</h3>
+          <p data-i18n="services.apis">Design and development of REST APIs from scratch, with authentication, validation, and documentation (Swagger).</p>
         </div>
         <div class="service-card">
           <span class="service-icon">◆</span>
-          <h3>Microsserviços &amp; Mensageria</h3>
-          <p>Desenho de arquiteturas orientadas a eventos com Kafka/RabbitMQ, filas resilientes e padrão outbox.</p>
+          <h3 data-i18n="services.microTitle">Microservices &amp; Messaging</h3>
+          <p data-i18n="services.microDesc">Design of event-driven architectures with Kafka/RabbitMQ, resilient queues, and the outbox pattern.</p>
         </div>
         <div class="service-card">
           <span class="service-icon">◆</span>
           <h3>Frontend (Angular / React)</h3>
-          <p>Telas e integrações de frontend consumindo suas APIs — de um formulário a um painel administrativo.</p>
+          <p data-i18n="services.frontend">Front-end screens and integrations consuming your APIs — from a simple form to an admin dashboard.</p>
         </div>
         <div class="service-card">
           <span class="service-icon">◆</span>
           <h3>Deploy &amp; Infra</h3>
-          <p>Subida de projetos na AWS ou Azure, containerização com Docker e pipelines de CI/CD com GitHub Actions.</p>
+          <p data-i18n="services.deploy">Deploying projects to AWS or Azure, containerization with Docker, and CI/CD pipelines with GitHub Actions.</p>
         </div>
         <div class="service-card">
           <span class="service-icon">◆</span>
-          <h3>Correção de bugs &amp; suporte pontual</h3>
-          <p>Herdou um projeto que ninguém mais mantém? Ajudo a diagnosticar, corrigir e deixar documentado.</p>
+          <h3 data-i18n="services.bugsTitle">Bug fixes &amp; one-off support</h3>
+          <p data-i18n="services.bugsDesc">Inherited a project nobody maintains anymore? I diagnose it, fix it, and leave it documented.</p>
         </div>
         <div class="service-card">
           <span class="service-icon">◆</span>
-          <h3>Consultoria de arquitetura</h3>
-          <p>Revisão de um projeto existente ou plano de migração de monolito para microsserviços.</p>
+          <h3 data-i18n="services.archTitle">Architecture consulting</h3>
+          <p data-i18n="services.archDesc">Review of an existing project or a migration plan from monolith to microservices.</p>
         </div>
       </div>
     </div>
@@ -186,34 +189,34 @@
 
   <section id="skills" class="section section-alt">
     <div class="section-inner">
-      <p class="section-tag">04 · Stack</p>
-      <h2 class="section-title">Ferramentas do dia a dia</h2>
+      <p class="section-tag" data-i18n="skills.tag">04 · Stack</p>
+      <h2 class="section-title" data-i18n="skills.title">Everyday tools</h2>
       <div class="skills-grid">
         <div class="skill-card">
-          <h3>Linguagens &amp; Frameworks</h3>
+          <h3 data-i18n="skills.langTitle">Languages &amp; Frameworks</h3>
           <div class="chips">
             <span class="chip">C#</span><span class="chip">.NET 8</span><span class="chip">ASP.NET Core</span>
             <span class="chip">TypeScript</span><span class="chip">Node.js</span><span class="chip">Python</span>
           </div>
         </div>
         <div class="skill-card">
-          <h3>Mensageria &amp; Streaming</h3>
+          <h3 data-i18n="skills.msgTitle">Messaging &amp; Streaming</h3>
           <div class="chips">
             <span class="chip">Apache Kafka</span><span class="chip">RabbitMQ</span><span class="chip">Outbox Pattern</span>
             <span class="chip">SignalR</span><span class="chip">Dead-letter Queues</span>
           </div>
         </div>
         <div class="skill-card">
-          <h3>Dados</h3>
+          <h3 data-i18n="skills.dataTitle">Data</h3>
           <div class="chips">
             <span class="chip">SQL Server</span><span class="chip">Oracle</span><span class="chip">MongoDB</span>
             <span class="chip">Redis</span><span class="chip">Dapper / EF Core</span>
           </div>
         </div>
         <div class="skill-card">
-          <h3>Arquitetura</h3>
+          <h3 data-i18n="skills.archTitle">Architecture</h3>
           <div class="chips">
-            <span class="chip">Microsserviços</span><span class="chip">Clean Architecture</span><span class="chip">DDD</span>
+            <span class="chip">Microservices</span><span class="chip">Clean Architecture</span><span class="chip">DDD</span>
             <span class="chip">Event-Driven</span><span class="chip">API Gateway</span>
           </div>
         </div>
@@ -225,9 +228,9 @@
           </div>
         </div>
         <div class="skill-card">
-          <h3>Qualidade</h3>
+          <h3 data-i18n="skills.qaTitle">Quality</h3>
           <div class="chips">
-            <span class="chip">xUnit</span><span class="chip">Testcontainers</span><span class="chip">Testes de integração</span>
+            <span class="chip">xUnit</span><span class="chip">Testcontainers</span><span class="chip" data-i18n="skills.integrationTests">Integration tests</span>
           </div>
         </div>
       </div>
@@ -236,9 +239,9 @@
 
   <section id="projetos" class="section">
     <div class="section-inner">
-      <p class="section-tag">05 · Projetos</p>
-      <h2 class="section-title">Alguns sistemas que construí</h2>
-      <p class="section-text">Projetos de estudo e portfólio com código público no GitHub — arquitetura pensada para produção, não só protótipo.</p>
+      <p class="section-tag" data-i18n="proj.tag">05 · Projects</p>
+      <h2 class="section-title" data-i18n="proj.title">Some systems I've built</h2>
+      <p class="section-text" data-i18n="proj.subtitle">Portfolio and study projects with public code on GitHub — architecture designed for production, not just prototypes.</p>
 
       <div class="projects-grid">
 
@@ -247,11 +250,11 @@
             <h3>TrocoPoints</h3>
             <span class="tag tag-api">Clean Architecture</span>
           </div>
-          <p>Plataforma de fidelidade que converte troco de compras em pontos por CPF. API valida e persiste transações no Oracle de forma idempotente com padrão <strong>outbox</strong>; um Worker consome eventos via RabbitMQ e credita pontos, com dead-letter queue para falhas.</p>
+          <p data-i18n="proj.trocoDesc">A loyalty platform that converts purchase change into points tied to a customer ID. The API validates and persists transactions in Oracle idempotently using the <strong>outbox</strong> pattern; a Worker consumes events via RabbitMQ and credits points, with a dead-letter queue for failures.</p>
           <div class="chips">
             <span class="chip">.NET 8</span><span class="chip">Oracle</span><span class="chip">MongoDB</span><span class="chip">RabbitMQ</span><span class="chip">Redis</span><span class="chip">OpenTelemetry</span><span class="chip">Testcontainers</span>
           </div>
-          <a class="project-link" href="https://github.com/tavoks/TrocoPoints" target="_blank" rel="noopener">Ver no GitHub →</a>
+          <a class="project-link" href="https://github.com/tavoks/TrocoPoints" target="_blank" rel="noopener" data-i18n="proj.viewGithub">View on GitHub →</a>
         </article>
 
         <article class="project-card featured">
@@ -259,65 +262,65 @@
             <h3>WhatsAppPlatform</h3>
             <span class="tag tag-worker">API + Worker</span>
           </div>
-          <p>Plataforma de integração com WhatsApp estruturada em camadas (Domain, Application, Infrastructure, API e Worker), com deploy em AWS — projetada para processar mensagens de forma assíncrona e escalável.</p>
+          <p data-i18n="proj.whatsappDesc">A WhatsApp integration platform structured in layers (Domain, Application, Infrastructure, API, and Worker), deployed on AWS — designed to process messages asynchronously and at scale.</p>
           <div class="chips">
             <span class="chip">.NET</span><span class="chip">Worker Service</span><span class="chip">AWS</span><span class="chip">Clean Architecture</span>
           </div>
-          <a class="project-link" href="https://github.com/tavoks/WhatsAppPlatform" target="_blank" rel="noopener">Ver no GitHub →</a>
+          <a class="project-link" href="https://github.com/tavoks/WhatsAppPlatform" target="_blank" rel="noopener" data-i18n="proj.viewGithub">View on GitHub →</a>
         </article>
 
         <article class="project-card featured">
           <div class="project-head">
             <h3>EcommerceApp</h3>
-            <span class="tag tag-micro">Microsserviços</span>
+            <span class="tag tag-micro" data-i18n="proj.microservicesTag">Microservices</span>
           </div>
-          <img src="assets/ecommerceapp-demo.gif" alt="Demonstração da API EcommerceApp criando um produto via Swagger" class="project-gif" loading="lazy">
-          <p>API em arquitetura de microsserviços com comunicação via Kafka: Catalog, Order e Notification Service, banco MongoDB, deploy no Azure e pipeline de CI/CD com GitHub Actions.</p>
+          <img src="assets/ecommerceapp-demo.gif" alt="EcommerceApp API demo creating a product via Swagger" class="project-gif" loading="lazy">
+          <p data-i18n="proj.ecommerceDesc">A microservices-architecture API communicating via Kafka: Catalog, Order, and Notification services, MongoDB database, Azure deployment, and a CI/CD pipeline with GitHub Actions.</p>
           <div class="chips">
             <span class="chip">Kafka</span><span class="chip">MongoDB</span><span class="chip">Docker</span><span class="chip">Azure</span><span class="chip">GitHub Actions</span>
           </div>
-          <a class="project-link" href="https://github.com/tavoks/EcommerceApp" target="_blank" rel="noopener">Ver no GitHub →</a>
+          <a class="project-link" href="https://github.com/tavoks/EcommerceApp" target="_blank" rel="noopener" data-i18n="proj.viewGithub">View on GitHub →</a>
         </article>
 
         <article class="project-card">
           <div class="project-head">
             <h3>EventDrivenDesignExample</h3>
-            <span class="tag tag-api">Arquitetura</span>
+            <span class="tag tag-api" data-i18n="proj.architectureTag">Architecture</span>
           </div>
-          <p>Exemplo didático de arquitetura orientada a eventos em .NET, com separação clara de camadas (Domain, Application, Infrastructure) para demonstrar o fluxo de eventos de domínio.</p>
+          <p data-i18n="proj.eventDrivenDesc">A teaching example of event-driven architecture in .NET, with clear layer separation (Domain, Application, Infrastructure) to demonstrate the flow of domain events.</p>
           <div class="chips">
             <span class="chip">.NET</span><span class="chip">DDD</span><span class="chip">Event-Driven</span>
           </div>
-          <a class="project-link" href="https://github.com/tavoks/EventDrivenDesignExample" target="_blank" rel="noopener">Ver no GitHub →</a>
+          <a class="project-link" href="https://github.com/tavoks/EventDrivenDesignExample" target="_blank" rel="noopener" data-i18n="proj.viewGithub">View on GitHub →</a>
         </article>
 
         <article class="project-card featured">
           <div class="project-head">
             <h3>SignalRExample</h3>
-            <span class="tag tag-api">Tempo real</span>
+            <span class="tag tag-api" data-i18n="proj.realtimeTag">Real-time</span>
           </div>
-          <img src="assets/signalr-chat-demo.gif" alt="Duas pessoas conversando em tempo real no chat SignalR" class="project-gif" loading="lazy">
-          <p>Chat em tempo real com SignalR em uma API ASP.NET Core, consumido por um front-end em Angular — comunicação bidirecional via WebSockets.</p>
+          <img src="assets/signalr-chat-demo.gif" alt="Two people chatting in real time on the SignalR chat" class="project-gif" loading="lazy">
+          <p data-i18n="proj.signalrDesc">A real-time chat built with SignalR on an ASP.NET Core API, consumed by an Angular front-end — bidirectional communication over WebSockets.</p>
           <div class="chips">
             <span class="chip">SignalR</span><span class="chip">ASP.NET Core</span><span class="chip">Angular</span>
           </div>
           <div class="project-links">
-            <a class="project-link" href="demos/chat.html" target="_blank" rel="noopener">Testar demo ao vivo →</a>
-            <a class="project-link" href="https://github.com/tavoks/SignalRExample" target="_blank" rel="noopener">Ver no GitHub →</a>
+            <a class="project-link" href="demos/chat.html" target="_blank" rel="noopener" data-i18n="proj.tryDemo">Try the live demo →</a>
+            <a class="project-link" href="https://github.com/tavoks/SignalRExample" target="_blank" rel="noopener" data-i18n="proj.viewGithub">View on GitHub →</a>
           </div>
         </article>
 
         <article class="project-card featured">
           <div class="project-head">
             <h3>RabbitmqApi</h3>
-            <span class="tag tag-worker">Mensageria</span>
+            <span class="tag tag-worker" data-i18n="proj.messagingTag">Messaging</span>
           </div>
-          <img src="assets/rabbitmqapi-demo.gif" alt="Solicitação de relatório ficando Pendente e depois Completado via RabbitMQ" class="project-gif" loading="lazy">
-          <p>API REST com um consumer assíncrono que reage a eventos publicados via RabbitMQ para gerar relatórios sob demanda, sem bloquear a requisição original.</p>
+          <img src="assets/rabbitmqapi-demo.gif" alt="Report request going from Pending to Completed via RabbitMQ" class="project-gif" loading="lazy">
+          <p data-i18n="proj.rabbitmqDesc">A REST API with an asynchronous consumer that reacts to events published via RabbitMQ to generate reports on demand, without blocking the original request.</p>
           <div class="chips">
             <span class="chip">.NET</span><span class="chip">RabbitMQ</span><span class="chip">Docker</span>
           </div>
-          <a class="project-link" href="https://github.com/tavoks/RabbitmqApi" target="_blank" rel="noopener">Ver no GitHub →</a>
+          <a class="project-link" href="https://github.com/tavoks/RabbitmqApi" target="_blank" rel="noopener" data-i18n="proj.viewGithub">View on GitHub →</a>
         </article>
 
         <article class="project-card">
@@ -325,11 +328,11 @@
             <h3>ParallelismDemo</h3>
             <span class="tag tag-worker">Async</span>
           </div>
-          <p>Estudos práticos de padrões de programação assíncrona e paralela em C#, aplicados a cenários de processamento em lote.</p>
+          <p data-i18n="proj.parallelismDesc">Hands-on studies of asynchronous and parallel programming patterns in C#, applied to batch-processing scenarios.</p>
           <div class="chips">
             <span class="chip">C#</span><span class="chip">Task Parallel Library</span>
           </div>
-          <a class="project-link" href="https://github.com/tavoks/ParallelismDemo" target="_blank" rel="noopener">Ver no GitHub →</a>
+          <a class="project-link" href="https://github.com/tavoks/ParallelismDemo" target="_blank" rel="noopener" data-i18n="proj.viewGithub">View on GitHub →</a>
         </article>
 
         <article class="project-card featured">
@@ -337,12 +340,12 @@
             <h3>ApiGateway</h3>
             <span class="tag tag-api">Gateway</span>
           </div>
-          <img src="assets/apigateway-demo.gif" alt="Health check do gateway e requisição roteada de verdade através dele" class="project-gif" loading="lazy">
-          <p>API Gateway em .NET com Ocelot, roteando e agregando chamadas para serviços internos, com health checks e resiliência via Polly (retry/circuit breaker).</p>
+          <img src="assets/apigateway-demo.gif" alt="Gateway health check and a real request routed through it" class="project-gif" loading="lazy">
+          <p data-i18n="proj.gatewayDesc">A .NET API Gateway built with Ocelot, routing and aggregating calls to internal services, with health checks and resilience via Polly (retry/circuit breaker).</p>
           <div class="chips">
             <span class="chip">.NET</span><span class="chip">Ocelot</span><span class="chip">Polly</span><span class="chip">Health Checks</span>
           </div>
-          <a class="project-link" href="https://github.com/tavoks/ApiGateway" target="_blank" rel="noopener">Ver no GitHub →</a>
+          <a class="project-link" href="https://github.com/tavoks/ApiGateway" target="_blank" rel="noopener" data-i18n="proj.viewGithub">View on GitHub →</a>
         </article>
 
         <article class="project-card">
@@ -350,43 +353,43 @@
             <h3>ImportFlow</h3>
             <span class="tag tag-worker">Pipeline</span>
           </div>
-          <p>Pipeline de importação de arquivos de alta vazão (meta de 1 milhão de linhas em menos de 2 horas), em Clean Architecture com CQRS, outbox pattern e worker assíncrono para processamento em background.</p>
+          <p data-i18n="proj.importflowDesc">A high-throughput file import pipeline (target: 1 million rows in under 2 hours), built with Clean Architecture, CQRS, the outbox pattern, and an async worker for background processing.</p>
           <div class="chips">
             <span class="chip">.NET 10</span><span class="chip">CQRS</span><span class="chip">Outbox</span><span class="chip">Clean Architecture</span><span class="chip">Docker</span>
           </div>
-          <a class="project-link" href="https://github.com/tavoks/ImportFlow" target="_blank" rel="noopener">Ver no GitHub →</a>
+          <a class="project-link" href="https://github.com/tavoks/ImportFlow" target="_blank" rel="noopener" data-i18n="proj.viewGithub">View on GitHub →</a>
         </article>
 
       </div>
 
       <p class="projects-more">
-        Mais projetos e experimentos em <a href="https://github.com/tavoks?tab=repositories" target="_blank" rel="noopener">github.com/tavoks</a>
+        <span data-i18n="proj.more">More projects and experiments at</span> <a href="https://github.com/tavoks?tab=repositories" target="_blank" rel="noopener">github.com/tavoks</a>
       </p>
     </div>
   </section>
 
   <section id="contato" class="section section-alt">
     <div class="section-inner contact-inner">
-      <p class="section-tag">06 · Contato</p>
-      <h2 class="section-title">Bora conversar sobre o seu projeto?</h2>
-      <p class="section-text">
-        Me chame direto no WhatsApp ou mande um e-mail contando o que você precisa —
-        API nova, worker de processamento, migração para microsserviços ou consultoria
-        de arquitetura. Respondo rápido.
+      <p class="section-tag" data-i18n="contact.tag">06 · Contact</p>
+      <h2 class="section-title" data-i18n="contact.title">Let's talk about your project?</h2>
+      <p class="section-text" data-i18n="contact.subtitle">
+        Message me directly on WhatsApp or send an email describing what you need —
+        a new API, a processing worker, a migration to microservices, or architecture
+        consulting. I respond fast.
       </p>
 
       <div class="contact-grid">
-        <a class="contact-card" href="https://wa.me/5511945741566?text=Ol%C3%A1%20Gustavo%2C%20vim%20pelo%20seu%20portf%C3%B3lio%20e%20gostaria%20de%20conversar%20sobre%20um%20projeto." target="_blank" rel="noopener">
+        <a class="contact-card" data-i18n-href="whatsapp" href="#" target="_blank" rel="noopener">
           <span class="contact-label">WhatsApp</span>
-          <span class="contact-value">Conversar agora →</span>
+          <span class="contact-value" data-i18n="contact.chatNow">Chat now →</span>
         </a>
         <a class="contact-card" href="mailto:gustavodelima1997@outlook.com">
-          <span class="contact-label">E-mail</span>
+          <span class="contact-label" data-i18n="contact.emailLabel">Email</span>
           <span class="contact-value">gustavodelima1997@outlook.com →</span>
         </a>
         <a class="contact-card" href="https://www.linkedin.com/in/gustavo-lima-16621a137/" target="_blank" rel="noopener">
           <span class="contact-label">LinkedIn</span>
-          <span class="contact-value">Conectar →</span>
+          <span class="contact-value" data-i18n="contact.connect">Connect →</span>
         </a>
         <a class="contact-card" href="https://github.com/tavoks" target="_blank" rel="noopener">
           <span class="contact-label">GitHub</span>
@@ -395,13 +398,13 @@
       </div>
 
       <form class="contact-form" id="contactForm" action="https://formspree.io/f/meajrbpd" method="POST">
-        <p class="form-note">Prefere deixar uma mensagem? Preencho e te retorno por e-mail.</p>
+        <p class="form-note" data-i18n="contact.formNote">Prefer to leave a message? Fill it in and I'll get back to you by email.</p>
         <div class="form-row">
-          <input type="text" name="name" placeholder="Seu nome" required>
-          <input type="email" name="email" placeholder="Seu e-mail" required>
+          <input type="text" name="name" data-i18n-placeholder="contact.namePlaceholder" placeholder="Your name" required>
+          <input type="email" name="email" data-i18n-placeholder="contact.emailPlaceholder" placeholder="Your email" required>
         </div>
-        <textarea name="message" rows="4" placeholder="Conte um pouco sobre o projeto..." required></textarea>
-        <button type="submit" class="btn btn-primary">Enviar mensagem</button>
+        <textarea name="message" rows="4" data-i18n-placeholder="contact.messagePlaceholder" placeholder="Tell me a bit about the project..." required></textarea>
+        <button type="submit" class="btn btn-primary" data-i18n="contact.send">Send message</button>
         <p class="form-status" id="formStatus"></p>
       </form>
     </div>
@@ -410,7 +413,7 @@
 </main>
 
 <footer class="footer">
-  <p>Gustavo de Lima — Desenvolvedor Backend .NET · <span id="year"></span></p>
+  <p><span data-i18n="footer.role">Gustavo de Lima — .NET Backend Developer</span> · <span id="year"></span></p>
 </footer>
 
 <div id="lightbox" class="lightbox">
@@ -419,6 +422,7 @@
 
 <div id="toast" class="toast"></div>
 
+<script src="js/i18n.js"></script>
 <script src="js/script.js"></script>
 </body>
 </html>
