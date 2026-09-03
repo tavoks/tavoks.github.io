@@ -250,6 +250,7 @@
             <h3>TrocoPoints</h3>
             <span class="tag tag-api">Clean Architecture</span>
           </div>
+          <img src="assets/trocopoints-demo.gif" alt="Transaction posted, then balance goes from not found to credited via Oracle, RabbitMQ and the outbox pattern" class="project-gif" loading="lazy">
           <p data-i18n="proj.trocoDesc">A loyalty platform that converts purchase change into points tied to a customer ID. The API validates and persists transactions in Oracle idempotently using the <strong>outbox</strong> pattern; a Worker consumes events via RabbitMQ and credits points, with a dead-letter queue for failures.</p>
           <div class="chips">
             <span class="chip">.NET 8</span><span class="chip">Oracle</span><span class="chip">MongoDB</span><span class="chip">RabbitMQ</span><span class="chip">Redis</span><span class="chip">OpenTelemetry</span><span class="chip">Testcontainers</span>
